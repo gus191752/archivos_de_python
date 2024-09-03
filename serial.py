@@ -1,2 +1,9 @@
 import serial, time
-uart=serial.Serial('COM3’,9600)
+print("===>inicio")
+#ser=serial.Serial('COM15',baudrate=9600,bytesize=8,parity='N',stopbits=1)
+ser = serial.Serial('COM16', 115900)
+time.sleep(2)
+ser.write(b'dato')
+respuesta=ser.readline()
+print(respuesta)
+ser.close()
